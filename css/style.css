@@ -1,0 +1,68 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.Playfair{
+    font-family: "Playfair Display";
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.justify-content{
+    justify-content: space-between;
+}
+.align-item{
+    align-items: center;
+}
+.primary-color{
+    color: #bb5a3a;
+}
+/* header */
+nav ul li a{
+    color: black;
+    font-size: 15px;
+    font-weight: 900;
+    transition: all 0.5s;
+}
+nav ul li a:hover{
+    color: #bb5a3a;
+}
+nav li{
+    margin: 20px ;
+}
+nav ul button{
+    font-weight: 900;
+    padding: 20px;
+    background-color: #bb5a3a85;
+    transition: all 0.5s;
+}
+nav ul button:hover{
+    background-color: #bb5a3a;
+    left: 0;
+}
+header{
+    margin: 10px 0px;
+    
+}
+/* search section */
+.search{
+    background-color: black;
+}
+.search p{
+    color: white;
+}
+.search .icon i{
+    color: white;
+}
