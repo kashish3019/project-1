@@ -23,24 +23,26 @@
       "email": "kashishpatel5253@gmail.com",
       "password": "wergh",
       "id": 5
+    }
+  ],
+  "user": [
+    {
+      "image": "",
+      "title": "sdc",
+      "message": "ac",
+      "id": 1
     },
     {
-      "username": "shilpa",
-      "email": "veerdpatel261@gmail.com",
-      "password": "sdc",
-      "id": 6
+      "image": "https://pixy.org/src/21/219269.jpg",
+      "title": "",
+      "message": "",
+      "id": 2
     },
     {
-      "username": "shilpa",
-      "email": "kashishpatel5253@gmail.com",
-      "password": "123456789",
-      "id": 7
-    },
-    {
-      "username": "shilpa",
-      "email": "kashishpatel5253@gmail.com",
-      "password": "kjn",
-      "id": 8
+      "image": "",
+      "title": "",
+      "message": "",
+      "id": 3
     }
   ]
 }
