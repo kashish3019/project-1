@@ -486,3 +486,53 @@ header {
     overflow-y: scroll;
     resize: none;
 }
+
+#ui #title{
+    font-size: 40px;
+}
+#ui{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+#ui img{
+    width: 350px;
+    height: 250px;
+}
+#ui h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0;
+    font-family: "Playfair Display";
+}
+#ui p{
+    font-size: 20px;
+    text-align: center;
+    font-family: "Playfair Display";
+    padding-bottom: 20px;
+}
+#ui button{
+    margin-left: 40px;    
+    padding: 20px 30px;
+    font-size: 15px;
+    font-family: "Playfair Display";
+    background-color: #bb5a3a;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+#ui button:hover{
+    background-color: #dc8d73;
+}
+
+button.like,
+button.dislike {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #333;  
+}

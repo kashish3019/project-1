@@ -38,20 +38,20 @@ document.getElementById("form").addEventListener("submit", (e) => {
         
 const ui = (data) => {
     document.getElementById("ui").innerHTML = "";
-    data.forEach((item) => {
+    data.map((ele) => {
         let image = document.createElement("img");
-        image.src = item.image;
+        image.src = ele.image;
 
         let title = document.createElement("h2");
-        title.innerHTML = item.title;
+        title.innerHTML = ele.title;
         
         let message = document.createElement("p");
-        message.innerHTML = item.message;
+        message.innerHTML = ele.message;
 
         let btn1 = document.createElement("button")
         btn1.innerHTML = "delete"
         btn1.addEventListener("click", () => {
-            fetch(`http://localhost:8090/user/${item.id}`, {
+            fetch(`http://localhost:8090/user/${ele.id}`, {
                 method: "DELETE",
             })
                 .then(() => {
@@ -60,18 +60,23 @@ const ui = (data) => {
                         .then((response) => ui(response));
                 });
         })
-        let btn2 = document.createElement("button")
-        btn2.innerHTML = "update"
-
-        btn2.addEventListener("click", () => {
-            document.getElementById("image").value = item.image
-            document.getElementById("title").value = item.title
-            document.getElementById("message").value = item.message
-            document.getElementById("value").value = "update"
-            id = item.id;
-        })
+        let btnLike = document.createElement("button");
+        const likeKey = `like-count-${ele.id}`;
+        let likes = parseInt(localStorage.getItem(likeKey)) || (ele.likes || 0);
+        btnLike.innerHTML = `<i class="fas fa-thumbs-up"></i> Like (${likes})`;
+        btnLike.addEventListener("click", () => {
+            fetch(`http://localhost:8090/user/like/${ele.id}`, {
+                method: "PATCH",
+                headers: { "content-type": "application/json" },
+            })
+                .then(() => {
+                    likes++;
+                    localStorage.setItem(likeKey, likes);
+                    btnLike.innerHTML = `<i class="fas fa-thumbs-up"></i> Like (${likes})`;
+                })
+        });
         let container = document.createElement("div");
-        container.append(image, title, message);
+        container.append(image, title, message, btn1, btnLike);
         document.getElementById("ui").append(container);
     });
 };
