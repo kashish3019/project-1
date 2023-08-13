@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row justify-content align-item">
                 <div class="logo">
-                    <h1 class="Playfair">Turning Heads</h1>
+                    <h1 class="Playfair">Kb blogs</h1>
                 </div>
                 <nav>
                     <ul class="row">
@@ -39,12 +39,14 @@
                             <h1>Welcome To Our Page</h1>
                             <h2>Login</h2>
                             <form id="log-form">
-                                <label for="username">Enter Username:</label>
-                                <input id="username" type="text" placeholder="Enter Username"><br><br>
+                                <label for="username">Enter Username or Email:</label>
+                                <input id="username" type="text" placeholder="Enter Username">
+                                <p id="useremailalert"></p><br><br>
                                 <label for="password">Enter Your Password:</label>
-                                <input type="password" id="password" placeholder="Enter Password"><br><br>
-                                <button type="submit" class="Playfair">Login</button>
-                                <h5>Don't Have Account ? <a href="signin.html">create Account</a></h5>
+                                <input type="password" id="password" placeholder="Enter Password">
+                                <p id="userpassalert"></p><br><br>
+                                <button type="submit" class="Playfair" id="submit">Login</button>
+                                <h5>Don't Have an Account ? <a href="signin.html">create Account</a></h5>
                             </form>
                         </div>
                     </div>
@@ -57,5 +59,6 @@
             </div>
         </div>
     </section>
+    <script src="login.js"></script>
 </body>
 </html>

@@ -7,9 +7,9 @@ document.getElementById("sign-form").addEventListener("submit", (e) => {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
     };
-    // console.log(user);
+    console.log(user);
     
-    fetch("http://localhost:3000/singup", {
+    fetch("http://localhost:8090/singup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
