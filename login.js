@@ -14,39 +14,39 @@ document.getElementById("log-form").addEventListener("submit", (e) => {
     } else {
         document.getElementById("useremailalert").innerHTML = "Invalid Email!!";
     }
- 
+
     if (passwordcheck.test(userpass)) {
         document.getElementById("userpassalert").innerHTML = "";
     } else {
-        document.getElementById("userpassalert").innerHTML = "Invalid password!!";
+        // document.getElementById("userpassalert").innerHTML = "Invalid password!!";
     }
 
     fetch(`http://localhost:8090/singup?email=${useremail}`)
-    .then((response) => response.json())
-    .then((fetchedData) => {
-        console.log(fetchedData);
-        if (fetchedData.length > 0) {
-            let userFound = false;
-            for (let i = 0; i < fetchedData.length; i++) {
-                if (fetchedData[i].email === useremail && fetchedData[i].password === userpass) {
-                    userFound = true;
-                    alert("Successfully logged in");
-                    window.location.href = "index.html";
-                    break;
+        .then((response) => response.json())
+        .then((fetchedData) => {
+            console.log(fetchedData);
+            if (fetchedData.length > 0) {
+                let userFound = false;
+                for (let i = 0; i < fetchedData.length; i++) {
+                    if (fetchedData[i].email === useremail && fetchedData[i].password === userpass) {
+                        userFound = true;
+                        alert("Successfully logged in");
+                        window.location.href = "index.html";
+                        break;
+                    }
                 }
-            }
-            if (!userFound) {
-                document.getElementById("useremailalert").innerHTML = "Invalid Email";
-                document.getElementById("userpassalert").innerHTML = "Invalid Password";
+                if (!userFound) {
+                    document.getElementById("useremailalert").innerHTML = "Invalid Email";
+                    // document.getElementById("userpassalert").innerHTML = "Invalid Password";
+                } else {
+                    // Clear the error messages when a successful login is detected
+                    document.getElementById("useremailalert").innerHTML = "";
+                    document.getElementById("userpassalert").innerHTML = "";
+                }
             } else {
-                // Clear the error messages when a successful login is detected
-                document.getElementById("useremailalert").innerHTML = "";
-                document.getElementById("userpassalert").innerHTML = "";
+                document.getElementById("useremailalert").innerHTML = "User Not Exist";
             }
-        } else {
-            document.getElementById("useremailalert").innerHTML = "User Not Exist";
-        }
-    });
+        });
 
 });
 
