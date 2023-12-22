@@ -494,6 +494,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
+    width: 33.33%;
 }
 #ui img{
     width: 350px;
